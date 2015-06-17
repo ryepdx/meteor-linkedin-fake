@@ -1,9 +1,9 @@
 <head>
-  <title>Google-Fake Test App</title>
+  <title>LinkedIn-Fake Test App</title>
 </head>
 
 <body>
-  <h1>Google-Fake Test App</h1>
+  <h1>LinkedIn-Fake Test App</h1>
   <p>{{> loginButtons}}</p>
   {{> userContent}}
 </body>
@@ -12,7 +12,7 @@
   <p>
     {{#if currentUser}}
       <span class="logged-in-message">
-        Welcome <span class="current-user-name">{{currentUser.profile.name}}</span>,
+              Welcome <span class="current-user-name">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</span>,
         You are logged in!
       </span>
     {{else}}

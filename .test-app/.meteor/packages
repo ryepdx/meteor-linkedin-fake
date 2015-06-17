@@ -6,7 +6,7 @@
 
 meteor-platform
 insecure
-accounts-google
 accounts-ui
-emmerge:google-fake
 mike:mocha
+pauli:accounts-linkedin
+ryepdx:linkedin-fake

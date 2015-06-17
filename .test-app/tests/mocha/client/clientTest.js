@@ -18,7 +18,7 @@ if (!(typeof MochaWeb === 'undefined')){
 
     describe("logged in", function() {
       before(function(done) {
-        $('#login-buttons-google').click();
+        $('#login-buttons-linkedin').click();
         Meteor.setTimeout(done, 1000); // is there a better way to do this?
       });
       it("should have a userId", function() {
@@ -31,7 +31,7 @@ if (!(typeof MochaWeb === 'undefined')){
         chai.assert.equal($('.logged-out-message').size(), 0);
       });
       it("should display the user name", function() {
-        chai.assert.equal($('.current-user-name').html(), 'Google Fake');
+        chai.assert.equal($('.current-user-name').html(), 'Frodo Baggins');
       });
     });
 

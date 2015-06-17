@@ -1,4 +1,4 @@
 #0.0.4
 
 * Basic OAuth stubbing works
-* forked from `xolvio:github-fake`
+* Forked from `emmerge:google-fake`

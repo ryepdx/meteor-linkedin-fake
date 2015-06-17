@@ -1,19 +1,17 @@
 HttpInterceptor = Package['xolvio:http-interceptor'].HttpInterceptor;
-HttpInterceptor.registerInterceptor('https://www.googleapis.com', Meteor.absoluteUrl('fake.www.googleapis.com'));
-HttpInterceptor.registerInterceptor('https://accounts.google.com', Meteor.absoluteUrl('fake.accounts.google.com'));
+HttpInterceptor.registerInterceptor('https://www.linkedin.com', Meteor.absoluteUrl('fake.www.linkedin.com'));
+HttpInterceptor.registerInterceptor('https://api.linkedin.com', Meteor.absoluteUrl('fake.api.linkedin.com'));
 
-
-Router.route('fake.accounts.google.com/o/oauth2/auth', function () {
+Router.route('fake.www.linkedin.com/uas/oauth2/authorization', function () {
   var parameters = _fixIronRouterBug(this.request.query);
   this.response.writeHead(301, {'Location': parameters.redirect_uri + '?code=a1b2c3d4e5f6g7h8i9j0' + '&state=' + parameters.state});
   this.response.end();
 }, {where: 'server'});
 
-Router.route('fake.accounts.google.com/o/oauth2/token', function () {
+Router.route('fake.api.linkedin.com/uas/oauth2/accessToken', function () {
   var cannedResponse = {
     'access_token': 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0',
-    'expires_in': '1000',
-    'scope': 'user:email'
+    'expires_in': '5184000'
   };
   this.response.writeHead(200, {
     'Content-Type': 'application/json; charset=utf-8'
@@ -21,13 +19,16 @@ Router.route('fake.accounts.google.com/o/oauth2/token', function () {
   this.response.end(JSON.stringify(cannedResponse));
 }, {where: 'server'});
 
-Router.route('fake.www.googleapis.com/oauth2/v1/userinfo', function () {
+Router.route('fake.www.linkedin.com/v1/people/~', function () {
   var cannedResponse = {
-    'login': 'go_fake',
-    'id': 1234567,
-    'name': 'Google Fake',
-    'email': 'google-fake@example.com'
-  };
+    "firstName": "Frodo",
+    "headline": "Jewelery Repossession in Middle Earth",
+    "id": "1R2RtA",
+    "lastName": "Baggins",
+    "siteStandardProfileRequest": {
+      "url": "https://www.linkedin.com/profile/view?id=1R2RtA"
+    }
+  }
   this.response.writeHead(200, {
     'Content-Type': 'application/json; charset=utf-8'
   });

@@ -1,8 +1,8 @@
 Meteor.startup(function () {
   Accounts.loginServiceConfiguration.upsert({
-    service: 'google'
+    service: 'linkedin'
   }, {
-    service: 'google',
+    service: 'linkedin',
     clientId: 'fakeClientId',
     secret: 'fakeSecret',
     loginStyle: 'popup'

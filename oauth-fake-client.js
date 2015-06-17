@@ -14,7 +14,7 @@ Package.oauth.OAuth.launchLogin = function (options) {
 
 
 var _getFakeOptionsFor = {
-  'google': function (options) {
+  'linkedin': function (options) {
     var loopbackLoginUrl;
 
     if (typeof URL === "function") {
