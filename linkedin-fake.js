@@ -25,6 +25,7 @@ Router.route('fake.www.linkedin.com/v1/people/~', function () {
     "headline": "Jewelery Repossession in Middle Earth",
     "id": "1R2RtA",
     "lastName": "Baggins",
+    "emailAddress": "frodob@ggins.com",
     "siteStandardProfileRequest": {
       "url": "https://www.linkedin.com/profile/view?id=1R2RtA"
     }
