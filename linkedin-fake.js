@@ -27,7 +27,9 @@ Router.route('fake.www.linkedin.com/v1/people/~', function () {
     "lastName": "Baggins",
     "emailAddress": "frodob@ggins.com",
     "siteStandardProfileRequest": {
-      "url": "https://www.linkedin.com/profile/view?id=1R2RtA"
+      // Note that LinkedIn changed the value of the id query param sometime
+      // around the beginning of October 2015. It should not be relied upon.
+      "url": "https://www.linkedin.com/profile/view?id=NotTheIdToUse"
     }
   }
   this.response.writeHead(200, {

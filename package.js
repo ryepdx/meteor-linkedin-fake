@@ -7,6 +7,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.use('oauth');
   api.use(['xolvio:http-interceptor@0.4.0'], ['server']);
   api.use(['iron:router@1.0.6'], ['server']);
   api.add_files('oauth-fake-client.js', 'client');

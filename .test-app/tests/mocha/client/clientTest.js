@@ -33,6 +33,9 @@ if (!(typeof MochaWeb === 'undefined')){
       it("should display the user name", function() {
         chai.assert.equal($('.current-user-name').html(), 'Frodo Baggins');
       });
+      it("should display the linkedin id", function() {
+        chai.assert.equal($('.linkedin-id').html(), '1R2RtA');
+      });
     });
 
   });
